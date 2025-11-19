@@ -1,7 +1,13 @@
+import { Footer } from "./components/Footer";
+import { Header } from "./components/Header";
+import { Home } from "./pages/Home";
+import "@fontsource/russo-one";
 function App() {
   return (
     <>
-      <h1>Coleccionde caarritos gg pap</h1>
+      <Header />
+      <Home />
+      <Footer />
     </>
   );
 }
