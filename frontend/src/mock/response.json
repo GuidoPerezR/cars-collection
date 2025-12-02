@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Lightning McQueen",
+    "character": "Rayo McQueen",
+    "series": "World Grand Prix",
+    "model_year": 2022,
+    "manufacturer": "Mattel",
+    "scale": "1:55",
+    "condition": "Loose",
+    "special": "Pintura metalflake",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_933572-MLA95835891751_102025-O.webp"
+  },
+  {
+    "id": 2,
+    "name": "Mater",
+    "character": "Mate",
+    "series": "Radiator Springs Classic",
+    "model_year": 2021,
+    "manufacturer": "Mattel",
+    "scale": "1:55",
+    "condition": "En blister",
+    "special": "Gancho metálico real",
+    "image": "https://http2.mlstatic.com/D_957537-MLM84654778119_052025-C.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Doc Hudson",
+    "character": "Hudson Hornet",
+    "series": "Piston Cup Originals",
+    "model_year": 2020,
+    "manufacturer": "Mattel",
+    "scale": "1:55",
+    "condition": "Loose",
+    "special": "Detalles cromados",
+    "image": "https://m.media-amazon.com/images/I/71jLEnQBLjL._AC_SL1020_.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Luigi y Guido",
+    "character": "Luigi y Guido",
+    "series": "Radiator Springs",
+    "model_year": 2019,
+    "manufacturer": "Mattel",
+    "scale": "1:55",
+    "condition": "En blister",
+    "special": "Pintura italiana premium",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_843736-MLM78511558753_082024-O.webp"
+  }
+]

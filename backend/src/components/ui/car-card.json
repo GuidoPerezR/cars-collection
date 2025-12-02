@@ -1,0 +1,47 @@
+{
+  "collectionName": "components_ui_car_cards",
+  "info": {
+    "displayName": "CarCard",
+    "icon": "car"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "main_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "carousel": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "achieve_car_date": {
+      "type": "date"
+    },
+    "place": {
+      "type": "string"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "model_year": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "config": {}
+}

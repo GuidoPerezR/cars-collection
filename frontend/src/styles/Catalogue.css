@@ -1,0 +1,32 @@
+.mask {
+  mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+}
+
+.custom-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23737373' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.2em 1.2em;
+  appearance: base-select;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  &::picker(select) {
+    appearance: base-select;
+    border: none;
+    border-radius: 8px;
+  }
+
+  option:first-of-type {
+    border-radius: 8px 8px 0 0;
+  }
+
+  option:last-of-type {
+    border-radius: 0 0 8px 8px;
+  }
+
+  & option {
+    background-color: blue;
+    color: black;
+  }
+}

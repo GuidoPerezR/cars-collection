@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "cars_sections",
+  "info": {
+    "singularName": "cars-section",
+    "pluralName": "cars-sections",
+    "displayName": "CarsSection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "car": {
+      "type": "component",
+      "component": "ui.car-card",
+      "repeatable": true
+    }
+  }
+}

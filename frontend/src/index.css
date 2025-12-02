@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navbar: #1a1a1a;
+  --color-primary: #d61e26;
+  --color-secondary: #f4c430;
+  --color-tertiary: #121212;
+
+  --font-russo-one: "Russo One", sans-serif;
+}
