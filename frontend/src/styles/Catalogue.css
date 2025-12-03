@@ -7,26 +7,12 @@
   background-position: right 0.5rem center;
   background-repeat: no-repeat;
   background-size: 1.2em 1.2em;
-  appearance: base-select;
+  appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
 
-  &::picker(select) {
-    appearance: base-select;
-    border: none;
-    border-radius: 8px;
-  }
-
-  option:first-of-type {
-    border-radius: 8px 8px 0 0;
-  }
-
-  option:last-of-type {
-    border-radius: 0 0 8px 8px;
-  }
-
   & option {
-    background-color: blue;
-    color: black;
+    background-color: #313131;
+    color: white;
   }
 }

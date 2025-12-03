@@ -1,8 +1,9 @@
+import { filteredData } from "@/functions/filtered_data";
 import { getCars } from "@/lib/strapi";
 import { useEffect } from "react";
 import { useState } from "react";
 
-export const useCatalogue = () => {
+export const useCatalogue = ({ filter }) => {
   const [data, setData] = useState([]);
   const [cars, setCars] = useState([]);
 
@@ -10,7 +11,16 @@ export const useCatalogue = () => {
     const getData = async () => {
       const { car } = await getCars();
       setData(car);
-      setCars(car);
+
+      if (filter) {
+        const filteredCars = filteredData({
+          option: filter,
+          cars: car,
+        });
+        setCars(filteredCars);
+      } else {
+        setCars(car);
+      }
     };
 
     getData();
