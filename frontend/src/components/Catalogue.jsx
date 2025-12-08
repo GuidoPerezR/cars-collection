@@ -1,13 +1,11 @@
 import { useId } from "react";
 import "@/styles/Catalogue.css";
-import { useCatalogue } from "@/hooks/useCatalogue";
 import { useFilters } from "@/hooks/useFilters";
 import { CarsContainer } from "./CarsContainer";
 
 export const Catalogue = () => {
   const filterId = useId();
   const { filterOption, handleFilterChange } = useFilters();
-  const { cars, loading } = useCatalogue({ filterOption });
 
   return (
     <section
@@ -32,7 +30,7 @@ export const Catalogue = () => {
         </select>
       </header>
       <div className="min-h-dvh w-full flex justify-center items-center">
-        <CarsContainer cars={cars} loading={loading} />
+        <CarsContainer/>
       </div>
     </section>
   );

@@ -1,13 +1,12 @@
-import { useState } from "react";
+import { FiltersContext } from "@/context/filters";
+import { useContext } from "react";
+// import { useState } from "react";
 import { useEffect } from "react";
 import { useSearchParams } from "react-router";
 
 export const useFilters = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
-
-  const [filterOption, setFilterOption] = useState(
-    searchParams.get("filter") || ""
-  );
+  const { filterOption, setFilterOption } = useContext(FiltersContext);
+  const [,setSearchParams] = useSearchParams();
 
   const handleFilterChange = (e) => {
     e.preventDefault();

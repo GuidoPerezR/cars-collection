@@ -1,7 +1,10 @@
+import { useCatalogue } from "@/hooks/useCatalogue";
 import { Car } from "./Car";
 import { Loader } from "./Loader";
 
-export function CarsContainer({ cars, loading }) {
+export function CarsContainer() {
+  const { cars, loading } = useCatalogue();
+
   if (loading) {
     return (
       <div className="flex justify-center items-center bg-tertiary ">
