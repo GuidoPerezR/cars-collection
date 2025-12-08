@@ -12,8 +12,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="*" element={<Page404 />} />
         <Route path="/car/:id" element={<CarPage />} />
+        <Route path="*" element={<Page404 />} />
       </Routes>
       <Footer />
     </>

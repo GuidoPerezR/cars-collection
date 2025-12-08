@@ -1,23 +1,40 @@
+import { Button } from "@/components/Button";
 import { GridCard } from "@/components/GridCard";
 import { ImageSlider } from "@/components/ImageSlider";
 import { formatDate } from "@/functions/formatDate";
 import { getCarById } from "@/lib/strapi";
 import { useState } from "react";
 import { useEffect } from "react";
-import { Link, useParams } from "react-router";
+import { useParams } from "react-router";
 
 export function CarPage() {
   const { id } = useParams();
-  const [car, setCar] = useState({});
+  const [car, setCar] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const getCar = async () => {
-      const { data } = await getCarById(id);
+      const { data, error } = await getCarById(id);
+      if (error) {
+        setError(error);
+        return;
+      }
       setCar(data);
     };
 
     getCar();
   }, [id]);
+
+  if (error || !car) {
+    return (
+      <section className="min-h-dvh bg-navbar flex items-center justify-center flex-col gap-12">
+        <h1 className="text-white text-3xl text-center font-russo-one text-pretty">
+          Página no encontrada
+        </h1>
+        <Button to="/">Regresar a Inicio</Button>
+      </section>
+    );
+  }
 
   return (
     <main className="w-full">
@@ -44,12 +61,7 @@ export function CarPage() {
           <h2 className="text-xl font-russo-one">Conseguido en</h2>
           <p className="text-pretty pt-2">{car.place}</p>
         </div>
-        <Link
-          to="/"
-          className="px-6 py-3 rounded-3xl bg-tertiary mx-auto text-secondary font-russo-one border border-secondary hover:bg-secondary hover:text-tertiary transition-colors duration-200"
-        >
-          Regresar a inicio
-        </Link>
+        <Button to="/">Regresar a Inicio</Button>
       </section>
     </main>
   );

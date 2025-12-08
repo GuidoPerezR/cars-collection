@@ -1,6 +1,7 @@
 import Mcqueen from "@/assets/mcqueen.png";
 import Mate from "@/assets/mate.png";
 import "@/styles/Hero.css";
+import { Button } from "./Button";
 
 export const Hero = () => {
   return (
@@ -23,12 +24,8 @@ export const Hero = () => {
               className=" z-20 rotate-y-180 w-1/2"
             />
           </div>
-          <a
-            href="#collection"
-            className="z-20 px-6 py-3 rounded-3xl bg-tertiary mx-auto text-secondary font-russo-one border border-secondary hover:bg-secondary hover:text-tertiary transition-colors duration-200 "
-          >
-            Ver colección
-          </a>
+
+          <Button href="#collection">Ver colección</Button>
         </div>
       </section>
       <div className="divider"></div>
