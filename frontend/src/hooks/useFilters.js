@@ -1,23 +1,30 @@
+import { useState } from "react";
+import { useEffect } from "react";
+import { useSearchParams } from "react-router";
+
 export const useFilters = () => {
-  const { cars, setCars, data } = useCatalogue();
+  const [searchParams, setSearchParams] = useSearchParams();
 
-  const filteredData = (option) => {
-    let filteredData;
+  const [filterOption, setFilterOption] = useState(
+    searchParams.get("filter") || ""
+  );
 
-    if (!option) filteredData = [...data];
-
-    if (option === "name") {
-      filteredData = [...cars].sort((a, b) => a.name.localeCompare(b.name));
-    }
-
-    if (option === "newer") {
-      filteredData = [...cars].sort((a, b) => b?.model_year - a?.model_year);
-    }
-
-    if (option === "price") {
-      filteredData = [...cars].sort((a, b) => a?.price - b?.price);
-    }
-
-    setCars(filteredData);
+  const handleFilterChange = (e) => {
+    e.preventDefault();
+    const selectedOption = e.target.value;
+    setFilterOption(selectedOption);
   };
+
+  useEffect(() => {
+    setSearchParams((params) => {
+      if (filterOption) {
+        params.set("filter", filterOption);
+      } else {
+        params.delete("filter");
+      }
+      return params;
+    });
+  }, [filterOption, setSearchParams]);
+
+  return { filterOption, handleFilterChange };
 };

@@ -1,34 +1,21 @@
-import { filteredData } from "@/functions/filtered_data";
-import { getCars } from "@/lib/strapi";
+import { getCars, getFilteredCars } from "@/lib/strapi";
 import { useEffect } from "react";
 import { useState } from "react";
 
-export const useCatalogue = ({ filter }) => {
-  const [data, setData] = useState([]);
+export const useCatalogue = ({ filterOption }) => {
   const [cars, setCars] = useState([]);
 
   useEffect(() => {
     const getData = async () => {
-      const { car } = await getCars();
-      setData(car);
+      const { data } =
+        filterOption === ""
+          ? await getCars()
+          : await getFilteredCars(filterOption);
 
-      if (filter) {
-        const filteredCars = filteredData({
-          option: filter,
-          cars: car,
-        });
-        setCars(filteredCars);
-      } else {
-        setCars(car);
-      }
+      setCars(data);
     };
-
     getData();
-  }, []);
+  }, [filterOption, setCars]);
 
-  // const firstData = () => {
-  //   setCars([...data]);
-  // };
-
-  return { cars, setCars, data };
+  return { cars };
 };
