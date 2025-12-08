@@ -1,13 +1,13 @@
 import { useId } from "react";
 import "@/styles/Catalogue.css";
-import { Car } from "@/components/Car";
 import { useCatalogue } from "@/hooks/useCatalogue";
 import { useFilters } from "@/hooks/useFilters";
+import { CarsContainer } from "./CarsContainer";
 
 export const Catalogue = () => {
   const filterId = useId();
   const { filterOption, handleFilterChange } = useFilters();
-  const { cars } = useCatalogue({ filterOption });
+  const { cars, loading } = useCatalogue({ filterOption });
 
   return (
     <section
@@ -31,16 +31,8 @@ export const Catalogue = () => {
           <option value="price:asc">Precio (Menor → Mayor)</option>
         </select>
       </header>
-      <div className="mt-6 grid grid-cols-2 gap-4">
-        {cars.map(({ documentId, main_image, name, model_year }) => (
-          <Car
-            key={documentId}
-            id={documentId}
-            image={main_image}
-            name={name}
-            model_year={model_year}
-          />
-        ))}
+      <div className="min-h-dvh w-full flex justify-center items-center">
+        <CarsContainer cars={cars} loading={loading} />
       </div>
     </section>
   );

@@ -14,9 +14,21 @@ export const Footer = () => {
           Guidzero
         </a>
       </p>
-      <div className="flex gap-4">
-        <GitHub className="size-6 ml-2" />
-        <LinkedIn className="size-6 ml-2" />
+      <div className="flex gap-6">
+        <a
+          href="https://github.com/GuidoPerezR"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <GitHub className="size-6" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/guidoperezr/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <LinkedIn className="size-6" />
+        </a>
       </div>
     </footer>
   );
