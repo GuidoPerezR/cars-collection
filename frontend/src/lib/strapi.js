@@ -1,6 +1,7 @@
 import qs from "qs";
 
-export const STRAPI_BASE_URL = "http://localhost:1338";
+export const STRAPI_BASE_URL =
+  import.meta.env.VITE_STRAPI_URL || "http://localhost:1338";
 
 const QUERY_HOME_PAGE = {
   fields: ["name", "model_year"],
