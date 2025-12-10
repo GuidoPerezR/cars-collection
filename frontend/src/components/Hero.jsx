@@ -7,7 +7,7 @@ export const Hero = () => {
   return (
     <>
       <section className="hero bg-primary py-24 w-full relative">
-        <div className=" flex flex-col gap-6">
+        <div className=" flex flex-col gap-6 justify-center items-center">
           <header>
             <h1
               className="relative z-20 font-russo-one text-white text-5xl text-center text-pretty
@@ -16,12 +16,16 @@ export const Hero = () => {
               Mi Colección de Cars
             </h1>
           </header>
-          <div className="flex items-center relative h-64">
-            <img src={Mcqueen} alt="Imagen de mcqueen" className="z-20 w-1/2" />
+          <div className="flex items-center relative h-64 justify-center md:h-96 max-w-4xl lg:max-w-5xl w-full ">
+            <img
+              src={Mcqueen}
+              alt="Imagen de mcqueen"
+              className="z-20 w-1/2 mask-to-left"
+            />
             <img
               src={Mate}
               alt="Imagen de mate"
-              className=" z-20 rotate-y-180 w-1/2"
+              className=" z-20 rotate-y-180 w-1/2 mask-to-bottom"
             />
           </div>
 

@@ -53,12 +53,12 @@ export function ImageSlider({ images }) {
       </div>
 
       {/* Navigation Dots */}
-      <div className="flex justify-center gap-2">
+      <div className="flex justify-center gap-2 md:gap-4">
         {images.map((_, index) => (
           <button
             key={index}
             onClick={() => scrollToSlide(index)}
-            className={`size-2 rounded-full transition-all duration-300 ${
+            className={`size-2 rounded-full transition-all duration-300 md:size-4 cursor-pointer ${
               index === currentIndex
                 ? "bg-white scale-110"
                 : "bg-white/50 hover:bg-white/75"

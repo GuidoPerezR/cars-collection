@@ -48,13 +48,10 @@ export async function getCarById(id) {
 export async function getStrapiData(url) {
   try {
     const response = await fetch(`${STRAPI_BASE_URL}${url}`);
-    if (!response.ok) {
-      throw new Error("Failed to fetch data from Strapi");
-    }
     const data = await response.json();
     return data;
   } catch (error) {
     console.error("Error fetching data from Strapi:", error);
-    return error;
+    return { data: null, error: { message: error.message } };
   }
 }
